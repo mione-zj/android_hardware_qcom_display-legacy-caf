@@ -6,7 +6,7 @@ ifeq ($(USE_OPENGL_RENDERER),true)
 LOCAL_MODULE           := libtilerenderer
 LOCAL_MODULE_TAGS      := optional
 LOCAL_CFLAGS += -DGL_GLEXT_PROTOTYPES
-ifeq ($(call is-vendor-board-platform,QCOM),true)
+ifneq (,$(filter $(QCOM_BOARD_PLATFORMS),$(TARGET_BOARD_PLATFORM)))
 LOCAL_CFLAGS += -DQCOM_APP_TILE_RENDER
 endif
 LOCAL_C_INCLUDES := \

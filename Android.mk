@@ -3,7 +3,7 @@
 
 ifeq ($(call my-dir),$(call project-path-for,qcom-display))
 
-ifeq ($(call is-vendor-board-platform,QCOM),true)
+ifneq (,$(filter $(QCOM_BOARD_PLATFORMS),$(TARGET_BOARD_PLATFORM)))
 display-hals := libgralloc libgenlock libcopybit liblight
 display-hals += libhwcomposer liboverlay libqdutils
 endif
