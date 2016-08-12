@@ -1,7 +1,7 @@
 #Enables the listed display HAL modules
 #libs to be built for QCOM targets only
 
-ifeq ($(TARGET_QCOM_DISPLAY_VARIANT),legacy-caf)
+ifeq ($(call my-dir),$(call project-path-for,qcom-display))
 
 ifeq ($(call is-vendor-board-platform,QCOM),true)
 display-hals := libgralloc libgenlock libcopybit liblight
